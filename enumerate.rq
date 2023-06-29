@@ -2,6 +2,7 @@
 #+   - genre:
 #+     - http://dbpedia.org/resource/Rock_music
 #+     - http://dbpedia.org/resource/Alternative_rock
+#+ pagination: 5
 
 PREFIX dbo: <http://dbpedia.org/ontology/>
 PREFIX dbp: <http://dbpedia.org/property/>
