@@ -1,15 +1,12 @@
-#+ enumerate:
-#+   - genre:
-#+     - http://dbpedia.org/resource/Rock_music
-#+     - http://dbpedia.org/resource/Alternative_rock
-#+ pagination: 5
+#+ default:
+#+   - pagination: 5
 
 PREFIX dbo: <http://dbpedia.org/ontology/>
 PREFIX dbp: <http://dbpedia.org/property/>
 PREFIX schema: <http://schema.org/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 
-SELECT ?band ?album WHERE {
+SELECT ?uriVocab ?class WHERE {
   ?uriVocab <http://www.w3.org/2004/02/skos/core#closeMatch> ?class.
   ?class <http://www.w3.org/2000/01/rdfschema#label> ?label.
   ?class <http://purl.org/dc/dcam/memberOf> <http://dbpedia.org/ontology/> .
