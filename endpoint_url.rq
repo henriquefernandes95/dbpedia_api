@@ -4,6 +4,7 @@
 #+     "genre": "?genre",
 #+     "$anchor": "band"
 #+   }
+#+ band : ?band
 
 PREFIX dbo: <http://dbpedia.org/ontology/>
 PREFIX dbp: <http://dbpedia.org/property/>
