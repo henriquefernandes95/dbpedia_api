@@ -1,4 +1,9 @@
-#+ endpoint_in_url: False
+#+ transform: {
+#+     "band": "?band",
+#+     "album": "?album",
+#+     "genre": "?genre",
+#+     "$anchor": "band"
+#+   }
 
 PREFIX dbo: <http://dbpedia.org/ontology/>
 PREFIX dbp: <http://dbpedia.org/property/>
