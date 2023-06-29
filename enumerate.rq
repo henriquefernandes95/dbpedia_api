@@ -10,8 +10,8 @@ PREFIX schema: <http://schema.org/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 
 SELECT ?band ?album WHERE {
-  ?band rdf:type dbo:Band .
-  ?album rdf:type schema:MusicAlbum .
-  ?band dbo:genre ?_genre_iri .
-  ?album dbp:artist ?band .
+  ?uriVocab <http://www.w3.org/2004/02/skos/core#closeMatch> ?class.
+  ?class <http://www.w3.org/2000/01/rdfschema#label> ?label.
+  ?class <http://purl.org/dc/dcam/memberOf> <http://dbpedia.org/ontology/> .
+
 } LIMIT 100
