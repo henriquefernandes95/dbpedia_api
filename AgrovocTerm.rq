@@ -1,6 +1,7 @@
 #+ endpoint: https://sparql.hegroup.org/sparql/
 #+ defaults:
 #+   - term: diacylglycerol 
+#+   - limit: 100
 #+ transform: {
 #+     "Subclasse": "?s",
 #+     "Classe": "?ClasseConceito",
@@ -20,6 +21,6 @@ select * {
             	?ClasseConceito rdfs:label ?ClasseConceitoLabel .
         }
         filter( contains(str(?ClasseConceitoLabel),str(?_term_str)))
-}limit 100
+}limit ?_limit
 
 
