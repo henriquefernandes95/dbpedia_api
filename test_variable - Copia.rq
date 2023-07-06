@@ -19,6 +19,7 @@ select * {
             	?ClasseConceito rdfs:label ?ClasseConceitoLabel .
         }
         filter( contains(str(?ClasseConceitoLabel),str(?_term_str)))
+        filter(lang(?ClasseConceitoLabel) = "pt"  && contains(str(?ClasseConceitoLabel),str(?_term_str)))
     }limit 100
 
 
