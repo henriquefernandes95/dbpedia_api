@@ -1,7 +1,6 @@
-#+ endpoint: https://sparql.hegroup.org/sparql/
+#+ endpoint: https://query.wikidata.org/
 #+ defaults:
 #+   - term: diacylglycerol 
-#+   - limit: 100
 #+ transform: {
 #+     "Subclasse": "?s",
 #+     "Classe": "?ClasseConceito",
@@ -14,7 +13,6 @@
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 SELECT * WHERE {
-  #hint:Query hint:optimizer "None".
  
   
   SERVICE <http://linkedgeodata.org/sparql> {
