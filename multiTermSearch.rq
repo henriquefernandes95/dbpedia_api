@@ -11,23 +11,19 @@
 #+ summary: Retrieve from Multiple Endpoints
 #+ description: Retrieve classes relating the searched term and its label from multiple sources
 
-
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-select * {
-        
-          ?s rdfs:subClassOf ?ClasseConceito .
-          ?ClasseConceito rdfs:label ?ClasseConceitoLabel .
-          filter( contains(str(?ClasseConceitoLabel),str(?_term_str)))
-}
-union{
-
-  select * {
-          SERVICE <https://dbpedia.org/sparql> { 
-            ?s rdfs:subClassOf ?ClasseConceito .
-            ?ClasseConceito rdfs:label ?ClasseConceitoLabel .
-            filter( contains(str(?ClasseConceitoLabel),str(?_term_str)))
-          }
-  }
-}
-
-limit 100
+SELECT * WHERE {  
+    ?a ?b ?c.
+ 
+    {
+        SERVICE <http://dbpedia.org/sparql> {
+            ?d ?p ?o.
+        } 
+    }  
+    UNION
+    {
+        SERVICE <http://bnb.data.bl.uk/sparql> {  
+            ?e ?p2 ?o2.
+        }
+    } 
+}limit 1
