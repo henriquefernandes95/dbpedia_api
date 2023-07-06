@@ -8,8 +8,8 @@
 #+     "Label": "?ClasseConceitoLabel",
 #+     "$anchor": "Label"
 #+   }
-#+ summary: Retrieve from Agrovoc
-#+ description: Retrieve classes relating the searched term and its label.
+#+ summary: Retrieve from Multiple Endpoints
+#+ description: Retrieve classes relating the searched term and its label from multiple sources
 
 
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
