@@ -12,18 +12,21 @@
 #+ description: Retrieve classes relating the searched term and its label from multiple sources
 
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-SELECT * WHERE {  
-    ?a ?b ?c.
+
+SELECT * WHERE {
+  #hint:Query hint:optimizer "None".
  
-    {
-        SERVICE <http://dbpedia.org/sparql> {
-            ?d ?p ?o.
-        } 
-    }  
-    UNION
-    {
-        SERVICE <http://bnb.data.bl.uk/sparql> {  
-            ?e ?p2 ?o2.
-        }
-    } 
-}limit 1
+  
+  SERVICE <http://linkedgeodata.org/sparql> {
+    { 
+      ?subject rdfs:label ?label. 
+    }
+    UNION { 
+      ?subject2 rdfs:label ?label2. 
+    }
+    filter( contains(str(?label),str(?_term_str)))
+    
+  }
+  
+ 
+}limit 10
