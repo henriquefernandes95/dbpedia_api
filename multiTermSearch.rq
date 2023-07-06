@@ -9,7 +9,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 SELECT * WHERE {
  
   
-  SERVICE <http://linkedgeodata.org/sparql> {
+  SERVICE <https://dbpedia.org/sparql> {
     { 
       ?subject rdfs:label ?label. 
     }
