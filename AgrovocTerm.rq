@@ -7,6 +7,7 @@
 #+     "Label": "?ClasseConceitoLabel",
 #+     "$anchor": "Label"
 #+   }
+#+ description: Retrieve classes relating the searched term and its label.
 
 PREFIX lodbr: <http://lodbr.ufrj.br/agrotoxicos/propriedade/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
