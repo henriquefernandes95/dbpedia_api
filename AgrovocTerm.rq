@@ -20,7 +20,8 @@ select * {
             	?s rdfs:subClassOf ?ClasseConceito .
             	?ClasseConceito rdfs:label ?ClasseConceitoLabel .
         }
+        
         filter( contains(str(?ClasseConceitoLabel),str(?_term_str)))
-}limit 100
+}having(limit ?_limit_str)
 
 
