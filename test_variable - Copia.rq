@@ -1,8 +1,8 @@
-grant SPARQL_LOAD_SERVICE_DATA to "SPARQL";
-grant SPARQL_SPONGE to "SPARQL";
+
 #+ defaults:
 #+   - term: diacylglycerol 
-
+grant SPARQL_LOAD_SERVICE_DATA to "SPARQL";
+grant SPARQL_SPONGE to "SPARQL";
 PREFIX lodbr: <http://lodbr.ufrj.br/agrotoxicos/propriedade/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
