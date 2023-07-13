@@ -9,7 +9,7 @@
 #+     "label": "?label",
 #+     "$anchor": "label"
 #+   }
-#+ summary: Retrieve from CHEBI
+#+ summary: Retrieve from endpoints
 #+ description: Retrieve classes relating the searched term and its label.
 
 
@@ -20,8 +20,6 @@ SELECT ?subject ?label WHERE {
         ?subject rdfs:label ?label. 
              
         filter( contains(str(?label),str(?_term_str)))
-
-
     
  
 }limit 100
