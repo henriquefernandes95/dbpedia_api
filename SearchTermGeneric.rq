@@ -1,0 +1,32 @@
+#+ tags:
+#+   - Busca Termo Genérico
+#+ endpoint: https://sparql.hegroup.org/sparql/
+#+ defaults:
+#+   - term: diacylglycerol 
+#+   - limit: 100
+#+ transform: {
+#+     "Subclasse": "?s",
+#+     "Classe": "?ClasseConceito",
+#+     "Label": "?ClasseConceitoLabel",
+#+     "$anchor": "Label"
+#+   }
+#+ summary: Retrieve from CHEBI
+#+ description: Retrieve classes relating the searched term and its label.
+
+
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?subject ?label WHERE {
+    {
+        select distinct * where{
+             SERVICE silent <?_endpoint_str> { 
+                ?subject rdfs:label ?label. 
+             }
+            filter( contains(str(?label),str(?_term_str)))
+
+
+        }limit 1
+    }
+ 
+}limit 1
+
