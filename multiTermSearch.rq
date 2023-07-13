@@ -12,7 +12,7 @@ SELECT ?subject ?label WHERE {
              SERVICE silent <https://dbpedia.org/sparql> { 
                 ?subject rdfs:label ?label. 
              }
-            filter( contains(str(?label),str("[[term]]")))
+            filter( contains(str(?label),str("?_term_str")))
 
 
         }limit 1
@@ -21,14 +21,14 @@ SELECT ?subject ?label WHERE {
              SERVICE silent <https://query.wikidata.org/sparql> { 
                 ?subject rdfs:label ?label. 
              }
-            filter( contains(str(?label),str("[[term]]")))
+            filter( contains(str(?label),str("?_term_str")))
         }limit 1
     }union{
         select distinct * where{
              SERVICE silent <https://sparql.hegroup.org/sparql/> { 
                 ?subject rdfs:label ?label. 
              }
-            filter( contains(str(?label),str("[[term]]")))
+            filter( contains(str(?label),str("?_term_str")))
         }limit 1
     }
  
