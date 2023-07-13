@@ -6,19 +6,30 @@
 
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-SELECT * WHERE {
- 
-  
-  SERVICE <https://dbpedia.org/sparql> {
-    { 
-      ?subject rdfs:label ?label. 
+SELECT ?subject ?label WHERE {
+    {
+        select distinct * where{
+             SERVICE silent <https://dbpedia.org/sparql> { 
+                ?subject rdfs:label ?label. 
+             }
+            filter( contains(str(?label),str("[[term]]")))
+
+
+        }limit 1
+    }union{
+        select distinct * where{
+             SERVICE silent <https://query.wikidata.org/sparql> { 
+                ?subject rdfs:label ?label. 
+             }
+            filter( contains(str(?label),str("[[term]]")))
+        }limit 1
+    }union{
+        select distinct * where{
+             SERVICE silent <https://sparql.hegroup.org/sparql/> { 
+                ?subject rdfs:label ?label. 
+             }
+            filter( contains(str(?label),str("[[term]]")))
+        }limit 1
     }
-    UNION { 
-      ?subject2 rdfs:label ?label2. 
-    }
-    filter( contains(str(?label),str(?_term_str)))
-    
-  }
-  
  
-}limit 10
+}limit 1
