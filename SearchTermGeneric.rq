@@ -17,14 +17,12 @@
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 SELECT ?subject ?label WHERE {
-    {
-        select distinct * where{
-                ?subject rdfs:label ?label. 
+   
+        ?subject rdfs:label ?label. 
              
-            filter( contains(str(?label),str(?_term_str)))
+        filter( contains(str(?label),str(?_term_str)))
 
 
-        }limit 1
     }
  
 }limit 1
