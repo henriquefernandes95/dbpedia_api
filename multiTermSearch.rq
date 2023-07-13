@@ -1,5 +1,5 @@
 #+ endpoint: https://query.wikidata.org/
-#+ default:
+#+ defaults:
 #+   - term: diacylglycerol 
 #+ summary: Retrieve from Multiple Endpoints
 #+ description: Retrieve classes relating the searched term and its label from multiple sources
