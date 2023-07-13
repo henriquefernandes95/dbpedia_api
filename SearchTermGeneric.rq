@@ -19,9 +19,8 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 SELECT ?subject ?label WHERE {
     {
         select distinct * where{
-             SERVICE silent <?_endpoint_str> { 
                 ?subject rdfs:label ?label. 
-             }
+             
             filter( contains(str(?label),str(?_term_str)))
 
 
