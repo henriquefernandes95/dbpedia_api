@@ -1,4 +1,5 @@
 #+ endpoint: https://query.wikidata.org/
+#+ default:
 #+   - term: diacylglycerol 
 #+ summary: Retrieve from Multiple Endpoints
 #+ description: Retrieve classes relating the searched term and its label from multiple sources
@@ -15,7 +16,7 @@ SELECT ?subject ?label WHERE {
              SERVICE silent <https://dbpedia.org/sparql> { 
                 ?subject rdfs:label ?label. 
              }
-            filter( contains(str(?label),str("?_term_str")))
+            filter( contains(str(?label),str(?_term_str)))
 
 
         }limit 1
@@ -24,14 +25,14 @@ SELECT ?subject ?label WHERE {
              SERVICE silent <https://query.wikidata.org/sparql> { 
                 ?subject rdfs:label ?label. 
              }
-            filter( contains(str(?label),str("?_term_str")))
+            filter( contains(str(?label),str(?_term_str)))
         }limit 1
     }union{
         select distinct * where{
              SERVICE silent <https://sparql.hegroup.org/sparql/> { 
                 ?subject rdfs:label ?label. 
              }
-            filter( contains(str(?label),str("?_term_str")))
+            filter( contains(str(?label),str(?_term_str)))
         }limit 1
     }
  
