@@ -15,7 +15,7 @@
 
 
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-select * {
+select distinct * {
         GRAPH <http://purl.obolibrary.org/obo/merged/CHEBI> {
             	?s rdfs:subClassOf ?ClasseConceito .
             	?ClasseConceito rdfs:label ?ClasseConceitoLabel .
