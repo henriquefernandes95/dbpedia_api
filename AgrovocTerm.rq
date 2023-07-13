@@ -1,3 +1,5 @@
+#+ tags:
+#+   - Busca Termo
 #+ endpoint: https://sparql.hegroup.org/sparql/
 #+ defaults:
 #+   - term: diacylglycerol 
@@ -8,7 +10,7 @@
 #+     "Label": "?ClasseConceitoLabel",
 #+     "$anchor": "Label"
 #+   }
-#+ summary: Retrieve from Agrovoc
+#+ summary: Retrieve from CHEBI
 #+ description: Retrieve classes relating the searched term and its label.
 
 
