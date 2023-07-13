@@ -5,10 +5,9 @@
 #+   - term: diacylglycerol 
 #+   - limit: 100
 #+ transform: {
-#+     "Subclasse": "?s",
-#+     "Classe": "?ClasseConceito",
-#+     "Label": "?ClasseConceitoLabel",
-#+     "$anchor": "Label"
+#+     "subject": "?subject",
+#+     "label": "?label",
+#+     "$anchor": "label"
 #+   }
 #+ summary: Retrieve from CHEBI
 #+ description: Retrieve classes relating the searched term and its label.
