@@ -23,7 +23,7 @@ SELECT ?subject ?label WHERE {
         filter( contains(str(?label),str(?_term_str)))
 
 
-    }
+    
  
 }limit 1
 
